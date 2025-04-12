@@ -21,9 +21,9 @@ from Modules.hifigan import Decoder
 import phonemizer
 
 # For windows bro
-from phonemizer.backend.espeak.wrapper import EspeakWrapper
-import espeakng_loader
-EspeakWrapper.set_library(espeakng_loader.get_library_path())
+# from phonemizer.backend.espeak.wrapper import EspeakWrapper
+# import espeakng_loader
+# EspeakWrapper.set_library(espeakng_loader.get_library_path())
 
 def espeak_phn(text, lang):
     try:
