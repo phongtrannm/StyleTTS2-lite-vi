@@ -73,7 +73,7 @@ with gr.Blocks() as demo:
         "(https://huggingface.co/dangtr0408/StyleTTS2-lite-vi/)."
     )
     gr.Markdown(
-        "Please specify a language tag in your inputs if the word is not Vietnamese, e.g., [en-us]{  } for English. For more information, see "
+        "Annotate any non‑Vietnamese words with the appropriate language tag, e.g., [en-us]{  } for English. For more information, see "
         "[eSpeakNG docs]"
         "(https://github.com/espeak-ng/espeak-ng/blob/master/docs/languages.md)"
     )
