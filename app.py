@@ -7,7 +7,7 @@ import traceback
 from inference import StyleTTS2
 repo_dir = './'
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-config_path = os.path.join(repo_dir, "Models", "config.yml")
+config_path = os.path.join(repo_dir, "Models", "config.yaml")
 models_path = os.path.join(repo_dir, "Models", "model.pth")
 model = StyleTTS2(config_path, models_path).eval().to(device)
 voice_path = os.path.join(repo_dir, "reference_audio")
