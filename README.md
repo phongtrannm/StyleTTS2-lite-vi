@@ -17,7 +17,7 @@ pipeline_tag: text-to-speech
 
 ## Online Demo  
 Explore the model on Hugging Face Spaces:  
-https://huggingface.co/spaces/styletts2/styletts2
+https://huggingface.co/spaces/dangtr0408/StyleTTS2-lite-vi-space
 
 
 ## Training Details  
