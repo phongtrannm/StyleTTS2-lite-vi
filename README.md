@@ -37,11 +37,10 @@ https://huggingface.co/spaces/dangtr0408/StyleTTS2-lite-vi-space
 | Component      | Parameters    |
 | -------------- | ------------- |
 | Decoder        | 54 ,289 ,492  |
-| Predictor      | 16 ,194 ,612  |
-| Text Encoder   | 56 ,120 ,320  |
-| Style Encoder  | 13 ,845 ,440  |
+| Predictor      | 16 ,194 ,612  |
+| Style Encoder  | 13 ,845 ,440  |
+| Text Encoder   | 5,612 ,320  |
 | **Total**      | **89 ,941 ,576** |
-
 
 ##  Prerequisites  
 
