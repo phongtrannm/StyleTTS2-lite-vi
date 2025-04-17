@@ -5,7 +5,7 @@ import numpy as np
 import torch
 import traceback
 from inference import StyleTTS2
-from util.NumberPronunciation import replace_numbers_with_pronunciation
+from util.NumberPronunciation import format_text_with_numbers_readable
 
 
 repo_dir = './'
@@ -43,7 +43,7 @@ eg_texts = [
 def main(reference_paths, text_prompt, denoise, avg_style, stabilize):
     try:
         # 👇 Tiền xử lý text để chuyển số thành cách đọc tiếng Việt
-        text_prompt = replace_numbers_with_pronunciation(text_prompt)
+        text_prompt = format_text_with_numbers_readable(raw_input)
 
         speakers = {}
         for i, path in enumerate(reference_paths, 1):

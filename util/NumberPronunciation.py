@@ -99,3 +99,20 @@ def replace_numbers_with_pronunciation(text):
         integer_part = normalized.split(',')[0]
         pronunciation = NumberPronunciationUtil.pronounce(integer_part)
         return pronunciation
+    
+def format_text_with_numbers_readable(text):
+    """
+    Tìm và chuyển mọi số trong đoạn text thành cách đọc tiếng Việt.
+    Giữ nguyên phần thập phân (nếu có), chỉ đọc phần nguyên.
+    """
+    # Biểu thức tìm các số có dấu chấm phân tách hàng nghìn hoặc số nguyên
+    pattern = r'\d{1,3}(?:\.\d{3})+|\d+'
+
+    def replacer(match):
+        raw_number = match.group(0)
+        normalized = normalize_number_string(raw_number)
+        integer_part = normalized.split(',')[0]
+        pronunciation = NumberPronunciationUtil.pronounce(integer_part)
+        return pronunciation
+
+    return re.sub(pattern, replacer, text)

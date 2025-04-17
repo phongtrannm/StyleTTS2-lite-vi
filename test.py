@@ -1,4 +1,4 @@
-from util.NumberPronunciation import NumberPronunciationUtil
+from util.NumberPronunciation import format_text_with_numbers_readable
 import re
 
 def normalize_number_string(number_str):
@@ -8,7 +8,6 @@ def normalize_number_string(number_str):
     - Giữ lại dấu phẩy (,) cho phần thập phân.
     Ví dụ: "1.234.567,89" => "1234567,89"
     """
-    # Loại bỏ mọi dấu chấm không nằm sau dấu phẩy
     if ',' in number_str:
         int_part, decimal_part = number_str.split(',', 1)
         int_part = int_part.replace('.', '')
@@ -17,17 +16,10 @@ def normalize_number_string(number_str):
         return number_str.replace('.', '')
 
 def main():
-    raw_input = "111.111,999"
-    normalized = normalize_number_string(raw_input)
+    raw_input = "Theo số liệu của Bộ Nội vụ, tính đến hết năm 2021, cả nước có có 90.508 thôn, tổ dân phố. Trong đó, có 69.580 thôn và 20.928 tổ dân phố."
 
-    # Chỉ lấy phần nguyên để phát âm
-    integer_part = normalized.split(',')[0]
-
-    pronunciation = NumberPronunciationUtil.pronounce(integer_part)
-
-    print(f"Số gốc: {raw_input}")
-    print(f"Số sau chuẩn hóa: {normalized}")
-    print(f"Cách đọc phần nguyên: {pronunciation}")
+    result = format_text_with_numbers_readable(raw_input)
+    print(result)
 
 if __name__ == "__main__":
     main()
