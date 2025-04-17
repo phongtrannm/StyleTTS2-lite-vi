@@ -4,6 +4,9 @@ import soundfile as sf
 import numpy as np
 import torch
 import traceback
+
+import psutil
+import platform
 from inference import StyleTTS2
 from util.NumberPronunciation import format_text_with_numbers_readable
 
