@@ -1,10 +1,10 @@
 import re
 
-from text_number import NumberPronunciation
-from text_date import DatePronunciation
-from text_range import RangePronunciation
-from text_normalizer import TextNormalizer
-
+# from text_number import NumberPronunciation
+from text_preprocessor.text_number import NumberPronunciation
+from text_preprocessor.text_date import DatePronunciation
+from text_preprocessor.text_range import RangePronunciation
+from text_preprocessor.text_normalizer import TextNormalizer
 
 class TextUtil:
     @classmethod
