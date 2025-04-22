@@ -41,9 +41,11 @@ class TextUtil:
     @classmethod
     def classify(cls, text):
         text_formated = cls._classify_and_pronounce_number(text)
-        text_formated = TextNormalizer.normalize(text_formated)
-        text_formated = UnitPronunciation().normalize_text(text_formated)
-        return text_formated
+        text_formated_1 = TextNormalizer.normalize(text_formated)
+        
+        unit_converter = UnitPronunciation()
+        text_formated_2 = unit_converter.normalize_text(text_formated_1)
+        return text_formated_2
 
 if __name__ == "__main__":
     tests = [
@@ -75,7 +77,11 @@ if __name__ == "__main__":
         "HN",
         "AI",
         "Google",
-        "VN"
+        "VN",
+         "Giá là 65 triệu/m², vào hồi 9h sáng nay, "
+        "anh nặng 70kg, cao 1m75 và chạy 10km mỗi ngày."
+        "cho căn 48–52 m², ngang ngửa với căn hộ thương mại bình dân "
+        "Anh Huy (Thanh Xuân) đi xem căn chung cư mini 48 m² có hai phòng ngủ, hai vệ sinh, chủ rao 1,7 tỷ đồng nhưng báo lên gần 2 tỷ sau khi đầu tư PCCC và để lại nội thất, tương đương 42 triệu/m² "
     ]
     for t in tests:
         print(f"{t} → {TextUtil.classify(t)}")

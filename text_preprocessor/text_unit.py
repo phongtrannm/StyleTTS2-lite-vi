@@ -52,6 +52,8 @@ if __name__ == "__main__":
     sample = (
         "Giá là 65 triệu/m², vào hồi 9h sáng nay, "
         "anh nặng 70kg, cao 1m75 và chạy 10km mỗi ngày."
+        "cho căn 48–52 m², ngang ngửa với căn hộ thương mại bình dân "
+        "Anh Huy (Thanh Xuân) đi xem căn chung cư mini 48 m² có hai phòng ngủ, hai vệ sinh, chủ rao 1,7 tỷ đồng nhưng báo lên gần 2 tỷ sau khi đầu tư PCCC và để lại nội thất, tương đương 42 triệu/m² "
     )
     print("Trước: ", sample)
     print("Sau:   ", unit_converter.normalize_text(sample))
