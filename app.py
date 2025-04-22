@@ -5,6 +5,8 @@ import numpy as np
 import torch
 import traceback
 from inference import StyleTTS2
+
+
 repo_dir = './'
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 config_path = os.path.join(repo_dir, "Models", "config.yaml")

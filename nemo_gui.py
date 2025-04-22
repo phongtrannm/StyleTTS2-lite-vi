@@ -8,7 +8,7 @@ import traceback
 import psutil
 import platform
 from inference import StyleTTS2
-from util.NumberPronunciationv2 import classify_and_pronounce_number
+from text_preprocessor.text_util import TextUtil
 
 
 repo_dir = './'
@@ -46,7 +46,7 @@ eg_texts = [
 def main(reference_paths, text_prompt, denoise, avg_style, stabilize):
     try:
         # 👇 Tiền xử lý text để chuyển số thành cách đọc tiếng Việt
-        text_prompt = classify_and_pronounce_number(text_prompt)
+        text_prompt = TextUtil.classify(text_prompt)
 
         speakers = {}
         for i, path in enumerate(reference_paths, 1):
