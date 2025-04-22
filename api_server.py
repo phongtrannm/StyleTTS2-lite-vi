@@ -11,8 +11,6 @@ import uuid
 from datetime import datetime
 
 import sys
-# Thêm thư mục gốc vào sys.path để Python tìm thấy inference.py
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from inference import StyleTTS2
 from text_preprocessor.text_util import TextUtil
 
