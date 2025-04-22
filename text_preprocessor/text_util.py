@@ -5,6 +5,7 @@ from text_preprocessor.text_number import NumberPronunciation
 from text_preprocessor.text_date import DatePronunciation
 from text_preprocessor.text_range import RangePronunciation
 from text_preprocessor.text_normalizer import TextNormalizer
+from text_preprocessor.text_unit import UnitPronunciation
 
 class TextUtil:
     @classmethod
@@ -40,7 +41,9 @@ class TextUtil:
     @classmethod
     def classify(cls, text):
         text_formated = cls._classify_and_pronounce_number(text)
-        return TextNormalizer.normalize(text_formated)
+        text_formated = TextNormalizer.normalize(text_formated)
+        text_formated = UnitPronunciation().normalize_text(text_formated)
+        return text_formated
 
 if __name__ == "__main__":
     tests = [

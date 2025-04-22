@@ -1,0 +1,267 @@
+[
+  {
+    "Ký hiệu":"mm",
+    "Tiếng Việt":"mili mét",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"cm",
+    "Tiếng Việt":"xenti mét",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"dm",
+    "Tiếng Việt":"đề xi mét",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"m",
+    "Tiếng Việt":"mét",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"km",
+    "Tiếng Việt":"kilô mét",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"in",
+    "Tiếng Việt":"inh",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"ft",
+    "Tiếng Việt":"Phít",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"yd",
+    "Tiếng Việt":"yard (thước Anh)",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"mi",
+    "Tiếng Việt":"dặm (mile)",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"nm",
+    "Tiếng Việt":"nano mét",
+    "Loại đơn vị":"Chiều dài"
+  },
+  {
+    "Ký hiệu":"mm²",
+    "Tiếng Việt":"mili mét vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"cm²",
+    "Tiếng Việt":"xen ti mét vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"m²",
+    "Tiếng Việt":"mét vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"km²",
+    "Tiếng Việt":"ki lô mét vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"ha",
+    "Tiếng Việt":"hecta",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"in²",
+    "Tiếng Việt":"inch vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"ft²",
+    "Tiếng Việt":"feet vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"yd²",
+    "Tiếng Việt":"yard vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"mi²",
+    "Tiếng Việt":"dặm vuông",
+    "Loại đơn vị":"Diện tích"
+  },
+  {
+    "Ký hiệu":"mm³",
+    "Tiếng Việt":"mili mét khối",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"cm³",
+    "Tiếng Việt":"xen ti mét khối",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"m³",
+    "Tiếng Việt":"mét khối",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"L",
+    "Tiếng Việt":"lít",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"mL",
+    "Tiếng Việt":"mililít",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"in³",
+    "Tiếng Việt":"inch khối",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"ft³",
+    "Tiếng Việt":"feet khối",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"gal",
+    "Tiếng Việt":"gallon",
+    "Loại đơn vị":"Thể tích"
+  },
+  {
+    "Ký hiệu":"mg",
+    "Tiếng Việt":"miligam",
+    "Loại đơn vị":"Khối lượng"
+  },
+  {
+    "Ký hiệu":"g",
+    "Tiếng Việt":"gam",
+    "Loại đơn vị":"Khối lượng"
+  },
+  {
+    "Ký hiệu":"kg",
+    "Tiếng Việt":"ki lô gam",
+    "Loại đơn vị":"Khối lượng"
+  },
+  {
+    "Ký hiệu":"t",
+    "Tiếng Việt":"tấn",
+    "Loại đơn vị":"Khối lượng"
+  },
+  {
+    "Ký hiệu":"lb",
+    "Tiếng Việt":"pound (bảng Anh)",
+    "Loại đơn vị":"Khối lượng"
+  },
+  {
+    "Ký hiệu":"oz",
+    "Tiếng Việt":"ounce",
+    "Loại đơn vị":"Khối lượng"
+  },
+  {
+    "Ký hiệu":"ms",
+    "Tiếng Việt":"mili giây",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"s",
+    "Tiếng Việt":"giây",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"min",
+    "Tiếng Việt":"phút",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"h",
+    "Tiếng Việt":"giờ",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"d",
+    "Tiếng Việt":"ngày",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"wk",
+    "Tiếng Việt":"tuần",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"mo",
+    "Tiếng Việt":"tháng",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"y",
+    "Tiếng Việt":"năm",
+    "Loại đơn vị":"Thời gian"
+  },
+  {
+    "Ký hiệu":"V",
+    "Tiếng Việt":"vôn",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"A",
+    "Tiếng Việt":"ampe",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"W",
+    "Tiếng Việt":"oát",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"kW",
+    "Tiếng Việt":"kilô oát",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"Wh",
+    "Tiếng Việt":"watt-giờ",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"J",
+    "Tiếng Việt":"jun",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"°C",
+    "Tiếng Việt":"độ C (Celsius)",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"K",
+    "Tiếng Việt":"Kelvin",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"cd",
+    "Tiếng Việt":"candela (căng-đê-la)",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"lm",
+    "Tiếng Việt":"lumen",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"lx",
+    "Tiếng Việt":"lux",
+    "Loại đơn vị":"Điện & năng lượng"
+  },
+  {
+    "Ký hiệu":"Hz",
+    "Tiếng Việt":"héc (hertz)",
+    "Loại đơn vị":"Điện & năng lượng"
+  }
+]
