@@ -15,28 +15,33 @@ class UnitPronunciation:
     def normalize_text(self, text: str) -> str:
         normalized = text
 
-        # 1) Xử lý các trường hợp có dấu “/” như “65 triệu/m²”
+        # 1) Xử lý dạng có dấu “/” như “65 triệu/m²”
         for unit in self.unit_keys:
             vi = self.unit_map[unit]
-            # Cho phép phần “value” chứa số, chữ (ví dụ: “65”, “65 triệu”), dấu chấm, phẩy, khoảng trắng
             pattern_slash = re.compile(
                 rf'(?P<value>[\d\w\s,\.]+?)\s*/\s*{re.escape(unit)}\b'
             )
             normalized = pattern_slash.sub(lambda m: f"{m.group('value')} trên {vi}", normalized)
 
-        # 2) Xử lý trường hợp “1m75” → “1 mét 75”
-        #    Bắt meter và phần lẻ ngay cạnh nhau không dấu cách
+        # 2) Xử lý dạng “1m75” → “1 mét 75”
         pattern_mix = re.compile(r'(?P<meters>\d+)m(?P<centi>\d+)\b')
         normalized = pattern_mix.sub(lambda m: f"{m.group('meters')} mét {m.group('centi')}", normalized)
 
-        # 3) Xử lý các trường hợp số liền đơn vị như “9h”, “70kg”, “10km”
+        # 3) Xử lý dạng “số cách đơn vị” như “50 m²”, “100 kg”
         for unit in self.unit_keys:
             vi = self.unit_map[unit]
-            pattern_join = re.compile(
-                rf'(?P<value>[\d\.,]+)\s*{re.escape(unit)}\b'
+            pattern_space = re.compile(
+                rf'(?P<value>[\d\.,]+)\s+{re.escape(unit)}\b'
             )
-            normalized = pattern_join.sub(lambda m: f"{m.group('value')} {vi}", normalized)
+            normalized = pattern_space.sub(lambda m: f"{m.group('value')} {vi}", normalized)
 
+        # 4) Xử lý dạng “số liền đơn vị” như “9h”, “70kg”, “10km”
+        for unit in self.unit_keys:
+            vi = self.unit_map[unit]
+            pattern_nospace = re.compile(
+                rf'(?P<value>[\d\.,]+){re.escape(unit)}\b'
+            )
+            normalized = pattern_nospace.sub(lambda m: f"{m.group('value')} {vi}", normalized)
 
         return normalized
     
