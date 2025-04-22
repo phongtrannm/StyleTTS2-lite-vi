@@ -170,7 +170,7 @@ class StyleTTS2(torch.nn.Module):
         module_params = []
         model = {'decoder':self.decoder, 'predictor':self.predictor, 'text_encoder':self.text_encoder, 'style_encoder':self.style_encoder}
 
-        params_whole = torch.load(models_path, map_location='cpu', weights_only=False)
+        params_whole = torch.load(models_path, map_location='cpu')
         params = params_whole['net']
         params = {key: value for key, value in params.items() if key in model.keys()}
 

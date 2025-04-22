@@ -42,10 +42,10 @@ class TextUtil:
     def classify(cls, text):
         #Xử lý đơn vị
         unit_converter = UnitPronunciation()
-        text_formated = unit_converter.normalize_text(text_formated)
+        text_formated = unit_converter.normalize_text(text)
 
         #xử lý số
-        text_formated = cls._classify_and_pronounce_number(text)
+        text_formated = cls._classify_and_pronounce_number(text_formated)
         
         #Xử lý danh từ
         text_formated = TextNormalizer.normalize(text_formated)
