@@ -1,4 +1,4 @@
-from text_number import NumberPronunciation
+from text_preprocessor.text_number import NumberPronunciation
 
 class DatePronunciation:
     @staticmethod
