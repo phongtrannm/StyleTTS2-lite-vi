@@ -34,8 +34,8 @@ print("============================\n")
 config_path = os.path.join(repo_dir, "Models", "config.yaml")
 models_path = os.path.join(repo_dir, "Models", "model.pth")
 model = StyleTTS2(config_path, models_path).eval().to(device)
-voice_path = os.path.join(repo_dir, "reference_audio")
-eg_voices = [os.path.join(voice_path,"vn_1.wav"), os.path.join(voice_path,"vn_2.wav")]
+voice_path = os.path.join(repo_dir, "reference_audio/vi_trung_tinh/nu")
+eg_voices = [os.path.join(voice_path,"vn_1.wav"), os.path.join(voice_path,"vn_3.wav")]
 eg_texts = [
     "Chỉ với khoảng 90 triệu tham số, [en-us]{StyleTTS2-lite} có thể dễ dàng tạo giọng nói với tốc độ cao.",
     "[id_1] Với [en-us]{StyleTTS2-lite} bạn có thể sử dụng [en-us]{language tag} để mô hình chắc chắn đọc bằng tiếng Anh, [id_2]cũng như sử dụng [en-us]{speaker tag} để chuyển đổi nhanh giữa các giọng đọc.",
@@ -46,7 +46,7 @@ eg_texts = [
 def main(reference_paths, text_prompt, denoise, avg_style, stabilize):
     try:
         # 👇 Tiền xử lý text để chuyển số thành cách đọc tiếng Việt
-        text_prompt = TextUtil.classify(text_prompt)
+        text_normalized = TextUtil.classify(text_prompt)
 
         speakers = {}
         for i, path in enumerate(reference_paths, 1):
@@ -58,12 +58,14 @@ def main(reference_paths, text_prompt, denoise, avg_style, stabilize):
         }
 
         with torch.no_grad():
-            styles = model.get_styles(speakers, denoise, avg_style)
-            r = model.generate(text_prompt, styles, stabilize, 18, "[id_1]")
-            r = r / np.abs(r).max()
+             styles = model.get_styles(speakers, denoise, avg_style)
+             r = model.generate(text_normalized, styles, stabilize, 18, "[id_1]")
+             r = r / np.abs(r).max()
             
         sf.write("output.wav", r, samplerate=24000)
-        return "output.wav", "Audio generated successfully!"
+        return "output.wav", text_normalized ,"Audio generated successfully!"
+        
+        #return 'reference_audio/eng/1.wav', text_normalized ,"Audio generated successfully!"
     
     except Exception as e:
         error_message = traceback.format_exc()
@@ -87,8 +89,8 @@ def on_file_upload(file_list):
     return list(unique_files.values()), f"Current reference audios:\n{summary}"
 
 def gen_example(reference_paths, text_prompt):
-    output, status = main(reference_paths, text_prompt, 0.6, True, True)
-    return output, reference_paths, status
+    output, text_normalized, status = main(reference_paths, text_prompt, 0.6, True, True)
+    return output, reference_paths, text_normalized, status
 
 
 # Gradio UI
@@ -121,11 +123,12 @@ with gr.Blocks() as demo:
             synthesized_audio = gr.Audio(label="Generate Audio", type="filepath")
 
     status = gr.Textbox(label="Status", interactive=False, lines=3)
+    text_normalized = gr.Textbox(label="text_normalized", interactive=False, lines=10)
 
     reference_audios.change(
         on_file_upload, 
         inputs=[reference_audios], 
-        outputs=[reference_audios, status]
+        outputs=[reference_audios, status, text_normalized]
     )
 
     gen_button.click(
@@ -137,13 +140,13 @@ with gr.Blocks() as demo:
             avg_style,
             stabilize
         ],
-        outputs=[synthesized_audio, status]
+        outputs=[synthesized_audio, status, text_normalized]
     )
 
     gr.Examples(
         examples=[[[eg_voices[0]], eg_texts[0]], [eg_voices, eg_texts[1]]],
         inputs=[reference_audios, text_prompt],
-        outputs=[synthesized_audio, reference_audios, status],
+        outputs=[synthesized_audio, reference_audios, status, text_normalized],
         fn=gen_example,
         cache_examples=False,
         label="Examples",

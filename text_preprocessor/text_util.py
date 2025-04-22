@@ -40,12 +40,17 @@ class TextUtil:
 
     @classmethod
     def classify(cls, text):
-        text_formated = cls._classify_and_pronounce_number(text)
-        text_formated_1 = TextNormalizer.normalize(text_formated)
-        
+        #Xử lý đơn vị
         unit_converter = UnitPronunciation()
-        text_formated_2 = unit_converter.normalize_text(text_formated_1)
-        return text_formated_2
+        text_formated = unit_converter.normalize_text(text_formated)
+
+        #xử lý số
+        text_formated = cls._classify_and_pronounce_number(text)
+        
+        #Xử lý danh từ
+        text_formated = TextNormalizer.normalize(text_formated)
+        
+        return text_formated
 
 if __name__ == "__main__":
     tests = [
