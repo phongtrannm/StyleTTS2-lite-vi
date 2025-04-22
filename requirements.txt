@@ -1,10 +1,27 @@
+# Core deep learning dependencies
 torch
 torchaudio
 numpy
+
+# Config & utility
 PyYAML
 munch
-nltk
+
+# Audio processing
 librosa
 noisereduce
+soundfile
+
+# TTS tools
 phonemizer
 espeakng-loader
+
+# Text processing
+nltk
+
+# FastAPI & server
+fastapi
+uvicorn
+
+# Optional: for file uploads and safer handling
+python-multipart
